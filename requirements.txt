@@ -15,3 +15,6 @@ discord.py>=2.3.2
 #2gb ram
 #2gb disk space
 
+#If you are allocating the bot to a server, make sure that the server has the necessary libraries installed, and that the bot has a minimum of 700MB to make sure that it is installed
+
+
