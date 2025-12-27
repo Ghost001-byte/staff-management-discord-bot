@@ -50,20 +50,9 @@ async def log_event(message: str):
             await channel.send(message)
 
 
-# --- SLASH COMMANDS (devono essere PRIMA di on_ready e bot.run) ---
-# Mantieni solo UNA definizione per ciascun comando slash.
-# Cerca e cancella tutte le ripetizioni successive di:
-#   @tree.command(name="pex", ...)
-#   @tree.command(name="depex", ...)
-#   @tree.command(name="blacklist", ...)
-#   @tree.command(name="assenza", ...)
-#   @tree.command(name="stafflist", ...)
-#   @tree.command(name="blacklistlist", ...)
-
 class TicketView(discord.ui.View):
     def __init__(self):
         super().__init__(timeout=None)
-        # --- COMANDI TICKET MANAGEMENT ---
 
     @discord.ui.button(label="Apri Ticket", style=discord.ButtonStyle.green, custom_id="open_ticket")
     async def open_ticket(self, interaction: discord.Interaction, button: discord.ui.Button):
@@ -267,5 +256,5 @@ async def on_ready():
 if not TOKEN:
     raise RuntimeError("Token Discord non trovato. Imposta la variabile d'ambiente DISCORD_TOKEN.")
 
-# Avvio del bot
 bot.run(TOKEN)
+
